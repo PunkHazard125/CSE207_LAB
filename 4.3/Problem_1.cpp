@@ -42,16 +42,19 @@ void reverse_array_hybrid(int **array, int size) {
 
 int main(void) {
     
-    int *array = new int[10];
+    int size;
+    cin >> size;
 
-    for (int i = 9; i >= 0; i--)
+    int *array = new int[size];
+
+    for (int i = 0; i < size; i++)
     {
-        array[i] = i + 1;
+        cin >> *(array + i);
     }
     
-    reverse_array(array, 10);
+    reverse_array(array, size);
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < size; i++)
     {
         cout << *(array + i) << " ";
     }

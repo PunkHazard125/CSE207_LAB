@@ -6,24 +6,18 @@ const string nl = "\n";
 
 int binarySearchNext(int array[], int size, int key) {
 
-    if (array[size - 1] < key)
+    if (array[size - 1] <= key)
     {
         return -1;
     }
-    
 
     int i = 0, j = size - 1, m;
 
     while (i <= j)
     {
         m = (i + j) / 2;
-
-        if (array[m] == key)
-        {
-            return m + 1;
-        }
         
-        if (key > array[m])
+        if (array[m] <= key)
         {
             i = m + 1;
         }
@@ -33,13 +27,13 @@ int binarySearchNext(int array[], int size, int key) {
         }
     }
 
-    return j + 1;
+    return i;
 
 }
 
 int binarySearchPrevious(int array[], int size, int key) {
 
-    if (array[0] > key)
+    if (array[0] >= key)
     {
         return -1;
     }
@@ -49,13 +43,8 @@ int binarySearchPrevious(int array[], int size, int key) {
     while (i <= j)
     {
         m = (i + j) / 2;
-
-        if (array[m] == key)
-        {
-            return m - 1;
-        }
         
-        if (key > array[m])
+        if (array[m] < key)
         {
             i = m + 1;
         }
@@ -65,7 +54,7 @@ int binarySearchPrevious(int array[], int size, int key) {
         }
     }
 
-    return i - 1;
+    return j;
 
 }
 
@@ -81,8 +70,8 @@ int main(void) {
     }
 
     cin >> q;
-    int ziggy[n];
-    for (int i = 0; i < n; i++)
+    int ziggy[q];
+    for (int i = 0; i < q; i++)
     {
         cin >> ziggy[i];
     }
