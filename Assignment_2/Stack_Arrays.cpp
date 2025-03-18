@@ -138,15 +138,6 @@ public:
 
     }
 
-    void print_stack() {
-
-        for (int i = 0; i < size; i++)
-        {
-            cout << array[i] << " ";
-        }
-        cout << ln;
-    }
-
 };
 
 int main(void) {
